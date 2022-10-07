@@ -1,0 +1,23 @@
+{% load static %}
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="{% static 'js/charts.js' %}"></script>
+
+
+<script type="text/javascript">
+    /* Variáveis para Gráficos */ 
+    var ganhos_template = {{ ganhos_templateView|safe }};
+    var ganhos_dados = {{ ganhos|safe }};
+
+    /* FINANÇAS */ 
+    var financas_template = {{ financas_templateView|safe }};
+    var financas_dados = {{ financas|safe }};
+    financas_dados[0].push({ role: "style" })
+    /* Gráficos */
+    var grafico_um = lineGraphic(ganhos_dados, ganhos_template[0], ganhos_template[1], ganhos_template[2]);
+    var grafico_financas = columChart(financas_dados, financas_template[0], financas_template[1]);
+</script>

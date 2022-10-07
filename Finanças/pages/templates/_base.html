@@ -1,0 +1,58 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rodape.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/graficos.css' %}">
+</head>
+<body>
+
+    <!-- NavBar -->
+    <header>
+        <!-- Conteúdo da Barra de Navegação -->      
+        <div class="toggle">
+            <a><img src="{% static 'img/toggle.svg' %}" alt=""></a>
+            <a>MENU</a>
+        </div>
+        <div class="usuario">
+            {% if user.is_authenticated %}
+                <a href="{% url 'account_logout' %}">SAIR DA MINHA CONTA</a>
+            {% else %}
+                <a href="{% url 'account_login' %}">FAÇA O LOGIN</a>
+            {% endif %}
+        </div>
+        <!-- Fim do conteúdo da Barra de Navegação-->
+    </header>
+    <!-- End NavBar -->
+
+    <section id="conteudo">
+        <!-- Conteúdo da Página -->  
+        {% block content %}
+        {% endblock content %}
+        <!-- Fim do Conteúdo da Página -->
+    </section>
+
+
+    <section id="rodape">
+
+    </section>
+
+
+
+
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</body>
+</html>

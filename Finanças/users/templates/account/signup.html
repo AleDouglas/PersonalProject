@@ -1,0 +1,27 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="formsClass">
+    <form method="post">
+    {% csrf_token %}
+    {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+        <p style="color: red;text-align: center;opacity: 0.8;">{{ error }}</p>
+        {% endfor %}
+    {% endfor %}
+
+
+    <p>Email</p>
+    <input type="email" name="email" placeholder="E-mail" autocomplete="off" required id="id_email">
+    <p>Usuário</p>
+    <input type="text" name="username" placeholder="Username" autocomplete="off" minlength="1" maxlength="150"required id="id_username">
+    <p>Senha</p>
+    <input type="password" name="password1" placeholder="Senha" autocomplete="off" required id="id_password1">
+    <p>Digite Novamente a Senha</p>
+    <input type="password" name="password2" placeholder="Senha ( Novamente )" autocomplete="off" required id="id_password2">
+
+    <button class="btnForm" type="submit">Sign Up</button>
+    </form>
+    {% endblock content %}
+</div>

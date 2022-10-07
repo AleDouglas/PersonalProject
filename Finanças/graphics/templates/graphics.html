@@ -1,0 +1,30 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+{% include "graphics_Script.html" %} <!-- Script's relacionado aos Gráficos -->
+
+
+<!-- GRÁFICOS -->
+<div class="container margin" style="--margin: 10px">
+    <div id="chart_div" style="height: 400px; width: 50%;"></div>
+    <div id="columnchart_values" style="height: 400px;"></div>
+</div>
+
+<div class="container column">
+    <hr style="color: black;width: 100%;">
+    <h1 class="titlePage">Relatório</h1>
+    <p class="observacao">Os valores do relatório são gerados a partir do mês atual salvo no sistema. Para o relatório ir além do mês do próprio sistema, basta apenas acessar a área de <span style="color: red">Projeções</span> no menu principal.</p>
+</div>
+<div class="container" style="background-color: black;">
+    <div>
+        <p>Divida Total:  R$</p>
+        <p>Dívida Mensal atual em: R$ </p>
+        <p>Valor pago nese mês:R$</p>
+        <p>Valor das novas dívidas geradas nesse mês: R$</p>
+    </div>
+    <div>
+        <p>Valor recebido no mês: R$</p>
+        <p>Saldo após pagamentos atuais: R$</p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="formsClass">
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+            <p style="color: red;text-align: center;opacity: 0.8;">{{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+        <p>Email</p>
+        <input type="email" name="login" placeholder="E-mail" required id="id_login" autocomplete="off">
+        <p>Senha</p>
+        <input type="password" name="password" placeholder="Senha" required id="id_password" autocomplete="off">
+        <p></p>
+        <button type="submit" class="btnForm">Login</button>
+        <p style="text-align: center;margin-top: 25px">Não possue conta? <a href="{% url 'account_signup' %}" style="color: red;">Cadastre-se agora.</a></p>
+    </form>
+</div>
+<hr>
+{% endblock content %}

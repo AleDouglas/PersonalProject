@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap'); /* font-family: 'Cormorant SC', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap'); /* font-family: 'Alkalami', serif; */
+
+*{
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    /* Paleta de Cores */
+    --color-background: #F2F2F2;
+
+   /* Gráficos */ 
+   --color-linhaPrimaria: #15BF81;
+   --color-linhaSecundaria: #168C61;
+   --color-LinhaTerciaria: #16F28B;
+   --color-linhaQuaternaria: #F2295F;
+}
+
+body{
+    background-color: var(--color-background);
+}
+
+#conteudo{
+    margin-top: 70px
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.container.margin div{
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+}
+
+.container.column{
+    flex-direction: column !important;
+}
+.titlePage{
+    font-size: 48px;
+    color: black;
+}
+
+.observacao{
+    color: black;
+    opacity: 0.6;
+}

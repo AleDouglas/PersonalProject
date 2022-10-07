@@ -1,0 +1,11 @@
+.grafico_um{
+    height: 500px;
+    width: 100%;
+    max-width: 550px;
+    padding: 25px;
+    background-color: #332E33;
+    margin: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 10px black;
+}
+
