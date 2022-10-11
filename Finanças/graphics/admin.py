@@ -7,7 +7,7 @@ from .models import Gain, Lose, Financa
 @admin.register(Gain)
 class GainPost(admin.ModelAdmin):
     list_display = ['usuario', 'data', 'valor']
-    exclude = ['usuario']
+
 
     def save_model(self, request, obj, form, change):
         obj.usuario = request.user
@@ -16,7 +16,7 @@ class GainPost(admin.ModelAdmin):
 @admin.register(Lose)
 class LosePost(admin.ModelAdmin):
     list_display = ['usuario', 'data', 'valor']
-    exclude = ['usuario']
+
 
     def save_model(self, request, obj, form, change):
         obj.usuario = request.user
@@ -24,8 +24,8 @@ class LosePost(admin.ModelAdmin):
 
 @admin.register(Financa)
 class FinancaPost(admin.ModelAdmin):
-    list_display = ['usuario', 'valor', 'credor']
-    exclude = ['usuario']
+    list_display = ['usuario', 'valor', 'credor', 'inicio']
+
 
     def save_model(self, request, obj, form, change):
         obj.usuario = request.user

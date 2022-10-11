@@ -21,7 +21,7 @@
     <header>
         <!-- Conteúdo da Barra de Navegação -->      
         <div class="toggle">
-            <a><img src="{% static 'img/toggle.svg' %}" alt=""></a>
+            <a onclick="toggleButton()"><img src="{% static 'img/toggle.svg' %}" alt=""></a>
             <a>MENU</a>
         </div>
         <div class="usuario">
@@ -33,6 +33,15 @@
         </div>
         <!-- Fim do conteúdo da Barra de Navegação-->
     </header>
+
+    <div class="navBar">
+        <div class="MenuButtons">
+            <a href="/graphics">Relatório</a>
+            <a href="/graphics/postGain">Adicionar Ganhos</a>
+            <a href="/graphics/postLose">Adicionar Perdas</a>
+            <a href="">Adicionar Financiamentos</a>
+        </div>
+    </div>
     <!-- End NavBar -->
 
     <section id="conteudo">
@@ -54,5 +63,6 @@
 
 <!-- JavaScript Bundle with Popper -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="{% static 'js/toggle.js' %}"></script>
 </body>
 </html>

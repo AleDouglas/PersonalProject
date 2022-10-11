@@ -1,6 +1,7 @@
 header{
     position: fixed !important;
     display: flex;
+    z-index: 10001;
     width: 100%;
     height: 70px;
     background-color: black;
@@ -19,4 +20,34 @@ header a{
 .toggle{
     display: flex;
     align-items: center;
+}
+
+.navBar{
+    height: 100%;
+    position: fixed;
+    width: 0px;
+    background-color: black;
+    z-index: 99999;
+    transition: 1.5s all ease;
+    overflow: hidden;
+    top: 70px;
+}
+.navBar.active{
+    width: 400px;
+}
+.MenuButtons{
+    display: flex;
+    flex-direction: column;
+}
+
+.MenuButtons a{
+    font-family: 'Cormorant SC', serif;
+    font-size: 24px;
+    padding: 20px;
+    text-decoration: none;
+    transition: 1s all ease;
+}
+
+.MenuButtons a:hover{
+    background-color: var(--color-linhaPrimaria);
 }

@@ -40,6 +40,10 @@ body{
     padding: 30px;
 }
 
+.container *{
+    color: black;
+}
+
 .container.margin div{
     margin-left: var(--margin);
     margin-right: var(--margin);
@@ -49,11 +53,54 @@ body{
     flex-direction: column !important;
 }
 .titlePage{
+    font-family: 'Cormorant SC', serif;
     font-size: 48px;
     color: black;
 }
 
+.subtitlePage{
+    font-family: 'Cormorant SC', serif;
+    font-size: 28px;
+    color: black;
+}
 .observacao{
+    font-family: 'Cormorant SC', serif;
     color: black;
     opacity: 0.6;
 }
+
+
+/* Janelas de Relatórios */
+.janela{
+    background-color: hsl(60, 100%, 78%);
+    border: 2px solid black;
+    padding: 50px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.janela hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/* Janelas de Postagens ( GRID ) */
+
+.blog{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 35px;
+    display: flex;
+}
+
+.postagem{
+    box-shadow: 10px 10px 10px black;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    min-height: 450px;
+    height: auto;
+    width: 350px;
+    border: 2px solid black;
+}
+
+

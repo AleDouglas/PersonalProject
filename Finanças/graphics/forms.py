@@ -13,5 +13,5 @@ class LoseForms(forms.ModelForm):
 
     class Meta:
         model = Lose
-        fields = ['usuario','valor', 'data']
+        fields = ['usuario','valor', 'data', 'credor']
         exclude = ('usuario',)

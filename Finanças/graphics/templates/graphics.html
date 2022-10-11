@@ -1,6 +1,8 @@
 {% extends '_base.html' %}
+{% load custom_tags %}
 {% load static %}
 {% block content %}
+
 {% include "graphics_Script.html" %} <!-- Script's relacionado aos Gráficos -->
 
 
@@ -12,19 +14,33 @@
 
 <div class="container column">
     <hr style="color: black;width: 100%;">
-    <h1 class="titlePage">Relatório</h1>
+    <h1 class="titlePage">##### Relatório #####</h1>
     <p class="observacao">Os valores do relatório são gerados a partir do mês atual salvo no sistema. Para o relatório ir além do mês do próprio sistema, basta apenas acessar a área de <span style="color: red">Projeções</span> no menu principal.</p>
 </div>
-<div class="container" style="background-color: black;">
-    <div>
-        <p>Divida Total:  R$</p>
-        <p>Dívida Mensal atual em: R$ </p>
-        <p>Valor pago nese mês:R$</p>
-        <p>Valor das novas dívidas geradas nesse mês: R$</p>
+<div class="container ">
+
+    <div class="janela">
+        <p># Divida total:  <span style="color: red">R${{divida_total}}0</span> || CLIQUE AQUI PARA ADICIONAR NOVOS VALORES</p>
+        <p style="opacity: 0.6;">Junção de todas as dívidas do mês atual. Ela usa de referência o inicio da dívida para verificar se ainda estará pendente no próximo mês.</p>
+        <hr style="margin-top: 10px">
+        <p># Dívida mensal Em: <span style="color: red">R${{divida_mensal}}0</span> || CLIQUE AQUI PARA ADICIONAR NOVOS VALORES</p>
+        <hr>
+        <p># Valor pago nesse mês: <span style="color: red">R${{pagamento_mes}}0</span> || CLIQUE AQUI PARA ADICIONAR NOVOS VALORES</p>
+        <hr>
+        <p># Saldo do mês: <span style="color: rgb(50, 50, 211)">R${{ganhos_mes}}0</span> || CLIQUE AQUI PARA ADICIONAR NOVOS VALORES</p>
+        <p style="opacity: 0.6;">Referente a todos os ganhos do mês, caso surja novos valores no decorrer do mês esse valor é alterado também.</p>
+        <hr>
+        <p># Saldo após pagamentos: <span style="color: rgb(50, 50, 211)">R${{ganhos_mes}}0</span> - <span style="color: red">R${{pagamento_mes}}0</span> = R${{saldo_apos}}0</p>
+        <p style="opacity: 0.6;">O saldo após pagamentos é o dinheiro livre restante para o mês. Lembrando que esse saldo abrange apenas os pagamentos feitos até agora, caso surja novos pagamentos esse valor é automaticamente reduzido.</p>
     </div>
+</div>
+
+<div class="container column">
+    <hr style="color: black;width: 100%;">
+    <h1 class="subtitlePage">## Detalhes ##</h1>
+<div class="container">
     <div>
-        <p>Valor recebido no mês: R$</p>
-        <p>Saldo após pagamentos atuais: R$</p>
+        <p>EM BREVE</p>
     </div>
 </div>
 {% endblock content %}
